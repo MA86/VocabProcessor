@@ -42,7 +42,7 @@ namespace VocabProcess
                 // Process english word if foreign word has already been processed
                 if (word != "" && englishWordCheck == false)
                 {
-                    vocabList += word + "\\t";
+                    vocabList += word + "\t";
 
                     // English word processed
                     englishWordCheck = true;
@@ -53,7 +53,7 @@ namespace VocabProcess
                 // Process foreign word if English word has already been processed
                 if (word != "" && englishWordCheck == true)
                 {
-                    vocabList += word + "\\n";
+                    vocabList += word + "\n";
 
                     // Foreign word processed
                     englishWordCheck = false;
@@ -65,7 +65,7 @@ namespace VocabProcess
             sr.Close();
 
             // Write the vocabList to a file on desktop
-            File.WriteAllText("vocabProcessed.txt", vocabList);
+            File.WriteAllText(args[1], vocabList);
         }
     }
 }
